@@ -3,10 +3,10 @@
 //
 #ifndef PARTIEL_TP_PORTEFEUILLE_H
 #define PARTIEL_TP_PORTEFEUILLE_H
+
 #include <iostream>
 #include "actif.h"
 
-using namespace std;
 
 class Portefeuille
 {
@@ -29,7 +29,7 @@ public:
      * @param qte quantité d'actif
      * @return valeur totale de ce qui a été vendue
      */
-    double venteActif(string nom, int qte);
+    double venteActif(std::string nom, int qte);
 
 private :
     /**

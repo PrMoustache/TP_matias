@@ -37,7 +37,7 @@ void Portefeuille::achatActif(std::string nom, double prix, int qte)
     //    nouvel actif, mais mettre à jour la quantité de l’actif existant ;
 }
 
-double Portefeuille::venteActif(string nom, int qte)
+double Portefeuille::venteActif(std::string nom, int qte)
 {
 
 }
