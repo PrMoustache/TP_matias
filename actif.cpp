@@ -4,57 +4,82 @@
 
 #include "actif.h"
 
-Actif::Actif(string n, double PRU, int qtInit){
-    this->id = idAttribut;
-    this->nom = n;
+Actif::Actif(std::string nom, double PRU, int qtInit)
+{
+    //controle sur la longueur de nom
+    if(nom.length()<1)
+    {
+        std::cerr<<"nom d actif incorrect"<<std::endl;
+        return;
+    }
+
+    //Gestion de l'id
+    for(int i=0;i<idAttribut;i++)
+    {
+        if(nom.compare(idLUT[i]))
+        {
+            break;
+        }
+    }
+
+    this->nom = nom;
+
     this->prixRevientUnitaire = PRU;
     this->quantiteTotal=qtInit;
+
+    this->id = idAttribut;
     idAttribut++;
+
 }
 
 int Actif::getId(){
     return this->id;
 }
-string Actif::getNom(){
+std::string Actif::getNom(){
     return this->nom;
 }
 double Actif::getPrixUnitaire(){
     return this->prixRevientUnitaire;
 }
-int Actif::getPrixTotal(){
+unsigned int Actif::getPrixTotal(){
     return this->quantiteTotal;
 }
 
 void Actif::setId(int i){
     this->id=i;
 }
-void Actif::setNom(string n){
+void Actif::setNom(std::string n){
     this->nom = n;
 }
-void Actif::setquantiteTotal(int qt){
+void Actif::setQuantiteTotal(unsigned int qt){
     this->quantiteTotal=qt;
 }
-void Actif::afficher(){
-    cout << "Id de l'actif = " << this->id << "\n";
-    cout << "Nom de l'actif = " << this->nom << "\n";
-    cout << "prixRevientUnitaire de l'actif = " << this->prixRevientUnitaire << "\n";
-    cout << "quantiteTotal de l'actif = " << this->quantiteTotal << "\n";
+void Actif::afficher()
+{
+    std::cout << "***************************"<< std::endl;
+    std::cout << "Id[" << id <<"]"<< std::endl;
+    std::cout << "Nom[" << nom <<"]"<< std::endl;
+    std::cout << "Prix de revient :" << prixRevientUnitaire << std::endl;
+    std::cout << "Quantitee totale: " << quantiteTotal << std::endl;
+    std::cout << "***************************"<< std::endl;
 }
 
-void Actif::vente(int quantDemander){
-    int diff = this->quantiteTotal-quantDemander;
-    cout << "\nVente de "<< quantDemander <<" actifs";
+void Actif::vente(unsigned int quantDemander)
+{
+    int diff = quantiteTotal-static_cast<int>(quantDemander);
+    std::cout << "Vente de "<< quantDemander <<" actifs"<<std::endl;
     if(diff<=0){
-        cout << "\nPas assez d'actif\n";
+        std::cout << "\nPas assez d'actif\n";
     } else {
         this->quantiteTotal = diff;
-        cout <<" \nNouveau solde = " << diff << "\n";
+        std::cout <<" \nNouveau solde = " << diff << std::endl;
     }
 }
-void Actif::achat(int quantDemander){
-    this->quantiteTotal = this->quantiteTotal+quantDemander;
-    cout << "\nAchat de " << quantDemander << " actifs";
-    cout <<"\nNouveau solde = " << this->quantiteTotal<<"\n";
+void Actif::achat(unsigned int quantDemander)
+{
+    quantiteTotal += quantDemander;
+    std::cout << "\nAchat de " << quantDemander << " actifs"<<std::endl;
+    std::cout <<"\nNouveau solde = " << quantiteTotal<<std::endl;
 }
 
 

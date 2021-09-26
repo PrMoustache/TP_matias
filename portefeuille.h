@@ -12,11 +12,39 @@ class Portefeuille
 {
 public:
 
-    Portefeuille();
+    Portefeuille(int arg = 1);
+    Portefeuille(const Portefeuille &source);
+    ~Portefeuille();
+
+    /**
+     * @brief achatActif
+     * @param nom
+     * @param prix
+     * @param qte
+     */
+    void achatActif(std::string nom, double prix, int qte);
+    /**
+     * @brief venteActif
+     * @param nom nom de l'actif
+     * @param qte quantité d'actif
+     * @return valeur totale de ce qui a été vendue
+     */
+    double venteActif(string nom, int qte);
+
+private :
+    /**
+     * @brief redimensionneTableauActifs réorganise le tbl actif si nba change
+     * @param nouvelleTaille nouvelle valeur de nba après opération
+     * @note nouvelleTaille ne peut être que >0
+     */
+    void redimensionneTableauActifs(int nouvelleTaille);
+
+
 private:
 
-    int nba, nbat;
-    Actif actifs[10];
+    int nba; //Nombre d'actif différents
+    int nbat; //Somme de tous les actifs confondus
+    Actif *actifs; //Tableau de 'nbat' actifs
 };
 
 #endif //PARTIEL_TP_PORTEFEUILLE_H
