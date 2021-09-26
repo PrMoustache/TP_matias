@@ -4,4 +4,4 @@ project(partiel_tp)
 set(CMAKE_CXX_STANDARD 98)
 
 
-add_executable(partiel_tp main.cpp actif.cpp portefeuille.cpp)
+add_executable(gestionPatrimoine main.cpp actif.cpp portefeuille.cpp)

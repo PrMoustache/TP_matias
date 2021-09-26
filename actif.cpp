@@ -84,4 +84,5 @@ void Actif::achat(unsigned int quantDemander)
 
 
 int Actif::idAttribut = 0;
+std::string Actif::idLUT[] = {};
 
