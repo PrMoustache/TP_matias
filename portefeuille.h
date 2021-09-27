@@ -1,11 +1,6 @@
-//
-// Created by Matias on 26/09/2021.
-//
-#ifndef PARTIEL_TP_PORTEFEUILLE_H
-#define PARTIEL_TP_PORTEFEUILLE_H
-
 #include <iostream>
 #include "actif.h"
+
 
 
 class Portefeuille
@@ -30,7 +25,10 @@ public:
      * @return valeur totale de ce qui a été vendue
      */
     double venteActif(std::string nom, int qte);
-
+    /**
+     * @brief affiche la liste des actifs du portefeuille
+     */
+    void afficherListeActif();
 private :
     /**
      * @brief redimensionneTableauActifs réorganise le tbl actif si nba change
@@ -48,3 +46,4 @@ private:
 };
 
 #endif //PARTIEL_TP_PORTEFEUILLE_H
+
