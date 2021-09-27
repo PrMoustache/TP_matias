@@ -1,3 +1,9 @@
+//
+// Created by Matias on 26/09/2021.
+//
+#ifndef PARTIEL_TP_PORTEFEUILLE_H
+#define PARTIEL_TP_PORTEFEUILLE_H
+
 #include <iostream>
 #include "actif.h"
 
@@ -46,4 +52,3 @@ private:
 };
 
 #endif //PARTIEL_TP_PORTEFEUILLE_H
-
