@@ -1,28 +1,28 @@
 #include <iostream>
 #include "actif.h"
+#include "portefeuille.h"
 
 
-int main(int argc,char **argv,char **env )
-{
+int main() {
+    /*Actif a("Orange",12.60,30);
+    Actif b("Sfr",10.3,10);
+    Actif c("Sfr",10.3,23);
+    Actif d("Free",5.25,15);
+    Actif e("Orange",13.6,20);
 
-    Actif A("Orange",12.50,15);
-    Actif B("SFR",10.30,14);
-    Actif C("Orange",12.50,300);
-    Actif D("",12.50,300);
+    a.afficher();
+    b.afficher();
+    c.afficher();
+    d.afficher();
+    e.afficher();
+    */
 
-    A.afficher();
-    A.achat(13);
-    A.afficher();
-    A.vente(29);
-    std::cout<<"-------------------"<<std::endl;
-    B.afficher();
-    B.achat(13);
-    B.afficher();
-    B.vente(29);
-    std::cout<<"-------------------"<<std::endl;
-    C.afficher();
-    C.achat(13);
-    C.afficher();
-    C.vente(29);
+    Portefeuille p(1);
+    p.achatActif("Orange",12.50,15);
+    p.achatActif("Sfr",15.3,10);
+    p.achatActif("Free",4.50,13);
+    p.achatActif("Orange",12.50,5);
+    p.afficherListeActif();
+    
     return 0;
 }
