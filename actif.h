@@ -16,6 +16,7 @@ class Actif
     Actif(Actif const& act);
 
     int id;
+    Actif();
     unsigned quantiteTotal;
     std::string nom;
     double prixRevientUnitaire;
@@ -52,6 +53,11 @@ public:
      */
     unsigned int getPrixTotal();
     /**
+     * @brief getquantiteTotal
+     * @return quantiteTotal
+     */
+    int getquantiteTotal();
+    /**
      * @brief setId change l'id de l'actif
      * @param i
      */
@@ -80,10 +86,10 @@ public:
      * @param quantDemander
      */
     void achat(unsigned int quantDemander);
-    
-    friend class Portefeuille;
 
+    friend class Portefeuille;
 };
+
 
 
 #endif //PARTIEL_TP_ACTIF_H
