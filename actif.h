@@ -80,6 +80,8 @@ public:
      * @param quantDemander
      */
     void achat(unsigned int quantDemander);
+    
+    friend class Portefeuille;
 
 };
 
